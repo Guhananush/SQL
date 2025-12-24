@@ -1,0 +1,53 @@
+-- WHERE CLAUSE 
+
+SELECT *
+FROM employee_salary;
+
+SELECT *
+FROM employee_salary
+WHERE first_name = 'Leslsi';
+
+SELECT *
+FROM employee_salary
+WHERE salary >= 50000 ;
+
+SELECT *
+FROM employee_demographics
+WHERE gender != 'Female'; # confrom use '' while declearing the column.
+
+-- AND OR NOT -- Logical Operatore 
+
+SELECT *
+FROM employee_demographics
+WHERE gender = 'Male'
+AND birth_date > '1985-01-01' ;
+
+SELECT *
+FROM employee_demographics
+WHERE gender = 'Male'
+OR birth_date > '1985-01-01' ;
+
+SELECT *
+FROM employee_demographics
+WHERE gender = 'Male'
+OR NOT birth_date > '1985-01-01' ;
+
+SELECT *
+FROM employee_demographics
+WHERE gender = 'Male'
+OR NOT (first_name = 'leslie' AND age = 44) OR age > 55;
+
+# -- LIKE statement ---
+-- %  and  _  --
+
+SELECT *
+FROM employee_demographics
+WHERE first_name LIKE '%er%';
+
+SELECT *
+FROM employee_demographics
+WHERE first_name LIKE 'a__';  # specific only three letters 
+
+SELECT *
+FROM employee_demographics
+WHERE birth_date LIKE '1989%';
