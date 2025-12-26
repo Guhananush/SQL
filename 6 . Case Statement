@@ -1,0 +1,26 @@
+-- CASE STATEMENT 
+
+select first_name,
+
+last_name,
+age,
+case
+    when age<= 30 then 'Young'
+    when age between 31 and 50 then 'old age'
+    when age >= 50 then 'Un death door'
+end as Age_Braket
+from employee_demographics;
+
+-- EXAMPLE 
+
+select first_name,last_name,salary,
+case
+	when salary <  50000 then salary * 1.05
+    when salary > 50000 then salary * 1.07
+    
+end as NEW_SALARY,
+case
+    when dept_id = 6 then salary * .10
+end as BONUS
+
+from employee_salary
